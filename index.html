@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11101c">
+  <meta name="description" content="Prono Club CI : espace de coupons sportifs 1xBet et Betclic.">
+  <title>Prono Club CI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">P</span>
+      PRONO<span class="purple">CLUB</span>
+    </a>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu">☰</button>
+    <nav id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#statistiques">Statistiques</a>
+      <a href="#coupons">Coupons</a>
+      <button id="loginTop" class="btn btn-outline">Connexion</button>
+      <button id="registerTop" class="btn btn-primary">S'inscrire</button>
+      <button id="logoutBtn" class="btn btn-outline hidden">Déconnexion</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="accueil" class="hero">
+      <div class="hero-content">
+        <span class="eyebrow">● TA COMMUNAUTÉ SPORTIVE</span>
+        <h1>Les coupons du jour.<br><span class="purple">Au même endroit.</span></h1>
+        <p>
+          Rejoins Prono Club CI pour retrouver les coupons sportifs
+          publiés par l'administrateur, dans un espace simple et organisé.
+        </p>
+        <div class="hero-actions" id="heroActions">
+          <button id="heroRegister" class="btn btn-primary btn-large">
+            Créer mon compte →
+          </button>
+          <button id="heroLogin" class="btn btn-outline btn-large">
+            Se connecter
+          </button>
+        </div>
+        <div id="welcomeUser" class="welcome-user hidden"></div>
+        <div class="trust-row">
+          <span>✓ Espace membres</span>
+          <span>✓ 1xBet</span>
+          <span>✓ Betclic</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="visual-glow"></div>
+        <div class="visual-card">
+          <div class="visual-top">
+            <span>PRONO CLUB CI</span>
+            <span class="live-dot">● EN LIGNE</span>
+          </div>
+          <div class="ticket-symbol">🎟️</div>
+          <h2>Ton espace.<br>Tes coupons.</h2>
+          <p>Des publications accessibles depuis ton téléphone.</p>
+          <div class="visual-footer">
+            <span>MEMBRES</span>
+            <span>ADMINISTRATION SÉCURISÉE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits section">
+      <div class="section-heading">
+        <span class="eyebrow">LA PLATEFORME</span>
+        <h2>Tout au même endroit.</h2>
+        <p>Une interface pensée pour consulter les publications facilement.</p>
+      </div>
+      <div class="benefit-grid">
+        <article class="benefit-card">
+          <div class="benefit-icon">🎟️</div>
+          <h3>Coupons sportifs</h3>
+          <p>Retrouve les publications partagées par l'administrateur.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon">🔐</div>
+          <h3>Espace membres</h3>
+          <p>Inscris-toi pour accéder à l'espace réservé aux membres.</p>
+        </article>
+        <article class="benefit-card">
+          <div class="benefit-icon">📱</div>
+          <h3>Simple sur mobile</h3>
+          <p>Consulte et copie les codes directement depuis ton téléphone.</p>
+        </article>
+      </div>
+    </section>
+    
+    <section id="statistiques" class="section stats-section">
+  <div class="section-heading">
+    <span class="eyebrow">NOS CHIFFRES</span>
+    <h2>Les statistiques du club</h2>
+    <p>Découvre les résultats des coupons et les préférences des membres.</p>
+  </div>
+
+  <div class="stats-grid">
+    <article class="stat-card">
+      <span>🎟️ Total coupons</span>
+      <strong id="statTotal">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>✅ Coupons gagnés</span>
+      <strong id="statWon">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>❌ Coupons perdus</span>
+      <strong id="statLost">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>⏳ En attente</span>
+      <strong id="statPending">0</strong>
+    </article>
+    <article class="stat-card highlight-stat">
+      <span>📈 Taux de réussite</span>
+      <strong id="statRate">0 %</strong>
+    </article>
+  </div>
+
+  <h3 class="stats-subtitle">Bookmakers des membres</h3>
+  <div class="stats-grid member-stats">
+    <article class="stat-card">
+      <span>🔵 1xBet</span>
+      <strong id="stat1xBet">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>🔴 Betclic</span>
+      <strong id="statBetclic">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>🤝 Les deux</span>
+      <strong id="statBoth">0</strong>
+    </article>
+    <article class="stat-card">
+      <span>👥 Total membres</span>
+      <strong id="statMembers">0</strong>
+    </article>
+  </div>
+
+
+
+  <p class="stats-disclaimer">
+    Statistiques informatives. Les résultats passés ne garantissent pas les gains futurs.
+  </p>
+</section>
+
+    <section id="coupons" class="section coupons-section">
+      <div class="section-heading left-heading">
+        <span class="eyebrow">ESPACE PRIVÉ</span>
+        <h2>Les coupons</h2>
+        <p id="couponSubtitle">Connecte-toi pour consulter les publications.</p>
+      </div>
+
+      <div id="lockedPanel" class="locked-panel">
+        <div class="lock-icon">🔒</div>
+        <h3>Réservé aux membres</h3>
+        <p>Crée un compte gratuitement pour accéder aux coupons publiés.</p>
+        <button id="lockedRegister" class="btn btn-primary">Créer mon compte</button>
+      </div>
+
+      <div id="memberPanel" class="hidden">
+        <div id="memberGreeting" class="member-greeting"></div>
+
+        <div id="adminPanel" class="admin-panel hidden">
+          <div class="admin-title">
+            <div>
+              <span class="eyebrow">ESPACE PRIVÉ</span>
+              <h3>Administration</h3>
+              <p>Publie et gère tes coupons.</p>
+            </div>
+            <span class="admin-badge">ADMIN</span>
+          </div>
+
+          <form id="couponForm">
+            <input type="hidden" id="editCouponId">
+
+            <label for="couponTitle">Titre de la publication</label>
+            <input id="couponTitle" maxlength="100"
+              placeholder="Ex. : Coupon du jour" required>
+
+            <label for="bookmaker">Bookmaker</label>
+            <select id="bookmaker" required>
+              <option value="1xBet">1xBet</option>
+              <option value="Betclic">Betclic</option>
+            </select>
+
+            <label for="couponCode">Code du coupon (facultatif)</label>
+            <input id="couponCode" maxlength="200"
+              placeholder="Entre le code du coupon">
+
+            <label for="couponImage">URL de la capture d'écran (facultatif)</label>
+            <input id="couponImage" type="url" maxlength="1500"
+              placeholder="https://...">
+
+            <label for="couponNote">Description (facultatif)</label>
+            <textarea id="couponNote" maxlength="1000" rows="3"
+              placeholder="Informations sur cette publication"></textarea>
+
+            <div class="form-actions">
+              <button id="publishBtn" type="submit" class="btn btn-primary">
+                Publier le coupon
+              </button>
+              <button id="cancelEdit" type="button"
+                class="btn btn-outline hidden">Annuler</button>
+            </div>
+          </form>
+        </div>
+
+        
+<div class="coupon-toolbar">
+  <h3>Historique des coupons</h3>
+  <select id="filterBookmaker" aria-label="Filtrer les coupons">
+    <option value="all">Tous les bookmakers</option>
+    <option value="1xBet">1xBet</option>
+    <option value="Betclic">Betclic</option>
+  </select>
+</div>
+
+<div class="result-tabs" role="tablist" aria-label="Résultats des coupons">
+  <button type="button" class="result-tab active"
+    data-status="pending">
+    ⏳ En attente <span id="countPending">0</span>
+  </button>
+
+  <button type="button" class="result-tab"
+    data-status="won">
+    ✅ Gagnés <span id="countWon">0</span>
+  </button>
+
+  <button type="button" class="result-tab"
+    data-status="lost">
+    ❌ Perdus <span id="countLost">0</span>
+  </button>
+</div>
+
+<div id="couponList" class="coupon-grid">
+  <p class="empty-state">Chargement des publications...</p>
+</div>
+
+    </section>
+
+    <section class="notice section">
+      <span>⚠️</span>
+      <p>
+        Les paris sportifs comportent un risque de perte financière.
+        Aucun coupon ni pronostic ne garantit un gain. Joue de manière responsable.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#" class="logo">PRONO<span class="purple">CLUB</span> CI</a>
+    <p>© <span id="year"></span> Prono Club CI. Tous droits réservés.</p>
+  </footer>
+
+  <div id="authModal" class="modal hidden">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button id="closeModal" class="close-modal" aria-label="Fermer">×</button>
+      <div class="modal-logo">P</div>
+      <h2 id="authTitle">Créer ton compte</h2>
+      <p id="authSubtitle">Rejoins Prono Club CI.</p>
+
+      <form id="authForm">
+        <div id="nameGroup">
+  <label for="fullName">Ton nom</label>
+  <input id="fullName" type="text" maxlength="60"
+    placeholder="Ton nom" autocomplete="name">
+</div>
+
+<div id="bookmakerGroup">
+  <label for="userBookmaker">Quel bookmaker utilises-tu ?</label>
+  <select id="userBookmaker">
+    <option value="">Choisis ton bookmaker</option>
+    <option value="1xBet">1xBet</option>
+    <option value="Betclic">Betclic</option>
+    <option value="Les deux">Les deux</option>
+  </select>
+</div>
+
+        <label for="email">Adresse e-mail</label>
+        <input id="email" type="email" required
+          placeholder="exemple@email.com" autocomplete="email">
+
+        <label for="password">Mot de passe</label>
+        <input id="password" type="password" required minlength="6"
+          placeholder="6 caractères minimum"
+          autocomplete="current-password">
+
+        <button id="authSubmit" type="submit"
+          class="btn btn-primary btn-full">Créer mon compte</button>
+      </form>
+
+      <p id="authError" class="form-message" role="status"></p>
+
+      <button id="switchAuth" class="switch-auth">
+        Déjà inscrit ? Se connecter
+      </button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script type="module" src="script.js"></script>
+  <a href="https://wa.me/2250100292559?text=Bonjour%2C%20je%20suis%20un%20membre%20du%20site%20Prono%20Club%2C%20je%20voudrais%20int%C3%A9grer%20votre%20groupe%20WhatsApp%20VIP.%20Quel%20moyen%20de%20paiement%20utilisez-vous%20%3F"
+   class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Service client WhatsApp">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+  <span>Service client</span>
+</a>
+  
+</body>
+</html>
